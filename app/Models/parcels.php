@@ -1,0 +1,30 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+
+class parcels extends Model
+{
+    use HasFactory;
+
+    protected $fillable = [
+        'From',
+        'To',
+        'ShipDetails',
+        'Weight',
+        'Phone',
+        'Email',
+        'FirstName',
+        'LastName',
+        'Reference',
+        'Status',
+        'idUsers'
+    ];
+
+    public $table = 'parcels';
+
+    public $timestamps ='false';
+
+}
