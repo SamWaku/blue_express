@@ -20,5 +20,8 @@ class staff extends Model
 
     public $table = 'staff';
 
-    public $timestamp = 'false';
+    public function delivery()
+    {
+        return $this->hasMany(deliveryteam::class);
+    }
 }

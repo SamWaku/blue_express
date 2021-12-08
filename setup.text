@@ -1,0 +1,8 @@
+1.clone the repo to local machine in destination folder
+2.run "composer update" to create vendor folder
+3.create .env file then copy and paste all the text in the .env.example file
+4.create a database and either migrate models "php artisan migrate" or  import an exisiting database
+5.clear cache using "php artisan cache:clear"
+6.generate APP KEY in .env file using "php artisan key:generate"
+7.start the server using " php -S localhost:8000 -t public" command
+8.Then vwola you have your apu working!!

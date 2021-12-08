@@ -8,14 +8,13 @@ use Illuminate\Database\Eloquent\Model;
 class shipping extends Model
 {
     use HasFactory;
-
     protected $fillable = [
         'Name',
-        'Rates'
+        'Rates',
+        'Duration'
     ];
+    public $table = 'shippings';
 
-    public $table = 'shipping';
-
-    public $timestamp = 'false';
+    
 
 }

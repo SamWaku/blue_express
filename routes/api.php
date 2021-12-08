@@ -2,8 +2,8 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\ServicesController;
-use App\Http\Controllers\AuthController;
+use App\Http\Controllers\ServiceController;
+use App\Http\Controllers\Auth\AuthController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,18 +16,17 @@ use App\Http\Controllers\AuthController;
 |
 */
 
-/*Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});*/
-
 Route::post('/register', [AuthController::class, 'registerUser']);
 Route::post('/login', [AuthController::class, 'loginUser']);
 
 
+
+
 Route::group(['middleware' => ['auth:sanctum']], function () {
     //route for submiting a parcel
-    Route::post('/submit', [ServicesController::class, 'submitParcel']); 
+    Route::post('/submit', [ServiceController::class, 'submitParcel']); 
+    Route::get('/statusCheck', [ServiceController::class, 'checkStatus']);
+    Route::get('/status', [ServiceController::class, 'parcelStatus']);
     //protected route for login out
     Route::post('/logout', [AuthController::class, 'logoutUser']);
   });
-

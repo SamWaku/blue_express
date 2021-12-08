@@ -15,11 +15,12 @@ class deliveryteam extends Model
         'Address',
         'Phone',
         'Email',
-        'idstaff'
+        'staff_id'
     ];
 
-    public $table = 'deliveryteam';
-
-    public $timestamp = 'false';
-
+    public function staffs()
+    {
+        
+            return $this->belongsTo(staff::class);
+    }
 }

@@ -8,7 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class parcels extends Model
 {
     use HasFactory;
-
     protected $fillable = [
         'From',
         'To',
@@ -20,11 +19,16 @@ class parcels extends Model
         'LastName',
         'Reference',
         'Status',
-        'idUsers'
+        'user_id'
     ];
 
     public $table = 'parcels';
 
-    public $timestamps ='false';
+    public function users()
+    {
+        
+            return $this->belongsTo(User::class);
+    }
 
+    
 }
